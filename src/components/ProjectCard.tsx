@@ -17,17 +17,34 @@ interface ProjectCardProps {
 }
 
 const Card = styled.div<{ featured: boolean }>`
-  background: white;
+  background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%);
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 215, 0, ${props => props.featured ? '0.3' : '0.1'});
   overflow: hidden;
   transition: all 0.3s ease;
   transform: ${props => props.featured ? 'scale(1.02)' : 'scale(1)'};
-  border: ${props => props.featured ? '3px solid #FFD700' : 'none'};
+  border: ${props => props.featured ? '2px solid #FFD700' : '1px solid rgba(255, 215, 0, 0.1)'};
+  position: relative;
   
   &:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 
+      0 20px 40px rgba(0, 0, 0, 0.5),
+      0 0 0 1px rgba(255, 215, 0, ${props => props.featured ? '0.6' : '0.3'});
+    border-color: ${props => props.featured ? '#FFD700' : 'rgba(255, 215, 0, 0.4)'};
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #FFD700, #FFA500, #FFD700);
+    opacity: ${props => props.featured ? '1' : '0.3'};
   }
 `;
 
@@ -36,12 +53,14 @@ const FeaturedBadge = styled.div`
   top: 15px;
   right: 15px;
   background: linear-gradient(45deg, #FFD700, #FFA500);
-  color: white;
+  color: #1a1a2e;
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 0.8rem;
-  font-weight: 600;
-  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+  border: 1px solid rgba(255, 215, 0, 0.6);
+  z-index: 2;
 `;
 
 const ImageContainer = styled.div`
@@ -63,20 +82,23 @@ const ProjectImage = styled.img`
 
 const CardContent = styled.div`
   padding: 25px;
+  background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%);
 `;
 
 const ProjectTitle = styled.h3`
   font-size: 1.5rem;
   font-weight: 700;
-  color: #333;
+  color: #FFD700;
   margin: 0 0 15px 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 `;
 
 const ProjectDescription = styled.p`
-  color: #666;
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
   margin: 0 0 20px 0;
   font-size: 0.95rem;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 `;
 
 const StatusBadge = styled.span<{ status: string }>`
@@ -92,6 +114,7 @@ const StatusBadge = styled.span<{ status: string }>`
     return '#9C27B0';
   }};
   color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 `;
 
 const TechStack = styled.div`
@@ -102,28 +125,33 @@ const TechStack = styled.div`
 `;
 
 const TechTag = styled.span`
-  background: #f0f0f0;
-  color: #555;
+  background: linear-gradient(145deg, #16213e 0%, #0f3460 100%);
+  color: #FFD700;
   padding: 4px 10px;
   border-radius: 12px;
   font-size: 0.8rem;
   font-weight: 500;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 `;
 
 const ViewButton = styled.a`
   display: inline-block;
-  background: linear-gradient(45deg, #667eea, #764ba2);
-  color: white;
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  color: #1a1a2e;
   text-decoration: none;
   padding: 12px 24px;
   border-radius: 25px;
-  font-weight: 600;
+  font-weight: 700;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+  border: 2px solid rgba(255, 215, 0, 0.3);
   
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+    background: linear-gradient(45deg, #FFA500, #FF8C00);
+    border-color: rgba(255, 215, 0, 0.6);
   }
 `;
 
