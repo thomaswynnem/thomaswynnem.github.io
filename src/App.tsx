@@ -66,7 +66,7 @@ const App: React.FC = () => {
       description: "An Object-Oriented Programming project focused on Formula 1 racing, currently in development.",
       image: "/GithubIcon.png",
       link: "https://github.com/thomaswynnem/f1_fanzone",
-      status: "In Development",
+      status: "Not Deployed",
       tech: ["JavaScript (Vanilla)", "OOP"],
       featured: false
     },
@@ -76,7 +76,7 @@ const App: React.FC = () => {
       description: "A fullstack jeopardy creation and sharing tool built with modern web technologies.",
       image: "/GithubIcon.png",
       link: "https://github.com/thomaswynnem/Public-Jeopardy",
-      status: "In Development",
+      status: "Not Deployed",
       tech: ["Node.js", "React", "Express", "JWT"],
       featured: false
     }
