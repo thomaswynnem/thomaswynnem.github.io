@@ -1,0 +1,25 @@
+{
+  "short_name": "Thomas Mitchell",
+  "name": "Thomas Mitchell - Developer Portfolio",
+  "icons": [
+    {
+      "src": "Me.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "Me.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "Me.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#1a1a2e",
+  "background_color": "#16213e"
+}
