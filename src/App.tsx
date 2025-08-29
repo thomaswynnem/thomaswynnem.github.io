@@ -67,7 +67,7 @@ const App: React.FC = () => {
       image: "/GithubIcon.png",
       link: "https://github.com/thomaswynnem/f1_fanzone",
       status: "Not Deployed",
-      tech: ["JavaScript (Vanilla)", "OOP"],
+      tech: ["JavaScript", "OOP"],
       featured: false
     },
     {
